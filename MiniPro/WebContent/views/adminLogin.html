@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login Page for administrator and MAC</title>
+</head>
+<body>
+	<form>
+		User_Name: <input type="text" name="user_name"><br>
+  		Password: <input type="password" name="password"><br>
+  		<input type="submit" value="Submit">
+  		
+  	</form>
+<!-- 
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+form {border: 3px solid #f1f1f1;}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4CAF50;
+    color: black;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 49.5%;
+}
+
+.container .loginbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 49.5%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+ .container .cancelbtn {
+	color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 49.5%;
+    background-color: #f44336;
+}
+
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+
+/* Style the tab */
+.tab {
+	width:50%;
+	height:70%;
+	position:absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	margin:auto;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    background-color: #808080;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+ 
+    padding: 6px 12px;
+    display:none;
+    border-top: none;
+}
+
+
+
+.tab .admin {
+width : 46%;
+border-right : 1px solid;
+border-bottom : 1px solid;
+border-left : 1px solid;
+margin : 12px;
+}
+.tab .mac	 {
+width : 46%;
+margin : 12px;
+border-right : 1px solid;
+border-bottom : 1px solid;
+border-left : 1px solid;
+}
+
+#admin_img { 
+width:50%;
+float:left;
+}
+#mac_img { 
+width:50%;
+float:left;
+}
+
+#admin_img img {
+margin-left: auto;
+margin-right:auto;
+display:block;
+}
+#mac_img img {
+margin-left: auto;
+margin-right:auto;
+display:block;
+}
+</style>
+</head>
+<body>
+
+ 
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'admin')">Login as Admin</button>
+  <button class="tablinks" onclick="openCity(event, 'mac')">Login as MAC</button> 
+  <div id="images">
+  <div id = "admin_img">
+  <img src= "images\admin login.jpg" alt="Admin">
+</div>
+<div id="mac_img">  
+  <img src= "images\mac.png" alt="MAC">
+  </div>
+  </div>
+  <div id="admin" class="tabcontent">
+  
+<form action="/action_page.php">
+
+
+  <div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Admin Username" name="uname" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+        
+    <button type="submit" class="loginbtn">Login</button>
+    <button type="button" class="cancelbtn">Cancel</button>
+   </div>
+</form>
+</div>
+ 
+ <div id="mac" class="tabcontent">
+
+<form action="/action_page.php">
+
+  <div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter MAC Username" name="uname" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+        
+    <button type="submit" class="loginbtn">Login</button>
+    <button type="button" class="cancelbtn">Cancel</button>
+   </div>
+</form>
+ 
+</div>
+</div>
+
+
+<script>
+function openCity(evt, cityName) {
+ document.getElementById("images").style.display = "none";
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) 
+	{
+	tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+	for (i = 0; i < tablinks.length; i++) 
+	{
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+</script>
+     
+</body>
+</html> -->  	
+  	
+  	
+  	
+</body>
+</html>
